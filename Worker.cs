@@ -23,7 +23,7 @@ namespace CryptoTracker.Prices
             while (!stoppingToken.IsCancellationRequested)
             {
                 string precosAtivos = await ObtemPrecosAtivosPortfolio();
-                await db.StringSetAsync("PortforlioAssetsPrices", precosAtivos);
+                await db.StringSetAsync("PortfolioAssetsPrices", precosAtivos);
 
                 await Task.Delay(300000, stoppingToken);
             }
