@@ -32,7 +32,7 @@ namespace CryptoTracker.Prices
         private async Task<string> ObtemPrecosAtivosPortfolio()
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest");
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=5000&aux=num_market_pairs,cmc_rank,date_added,platform,max_supply,circulating_supply,total_supply");
             request.Headers.Add("X-CMC_PRO_API_KEY", "SUA CHAVE DE API DA COINMARKETCAP");
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
